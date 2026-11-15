@@ -1,0 +1,225 @@
+{
+ "status": "ok",
+ "connected": true,
+ "message": "Pairs are potential relationships only, not confirmed same-fire matches.",
+ "query": {
+  "start_date": "2024-03-01",
+  "end_date": "2024-03-02",
+  "end_date_inclusive": true,
+  "bbox": {
+   "min_lon": 76,
+   "min_lat": 21,
+   "max_lon": 80,
+   "max_lat": 25
+  }
+ },
+ "applied_thresholds": {
+  "spatial_km": 1.0,
+  "temporal_minutes": 30.0,
+  "date_tolerance_days": 0
+ },
+ "counts": {
+  "observations": {
+   "modis": 2,
+   "viirs": 3,
+   "modis_pixels_retrieved": 6,
+   "viirs_pixels_retrieved": 3
+  },
+  "candidate_pairs": {
+   "total": 2,
+   "potential_spatial_and_temporal_matches": 0,
+   "spatial_only_candidates": 0,
+   "insufficient_timestamp_information": 2,
+   "modis_observations_with_a_candidate": 2,
+   "viirs_observations_with_a_candidate": 2
+  },
+  "unmatched": {
+   "modis_observations": 0,
+   "viirs_observations": 1,
+   "modis_without_coordinates": 0,
+   "viirs_without_coordinates": 0
+  },
+  "unique_fire_events": null
+ },
+ "temporal_matching_available": false,
+ "match_details": [
+  {
+   "modis_observation_id": "MODIS:2024061:713",
+   "viirs_observation_id": "VIIRS:v1:1",
+   "distance_km": 0.6564,
+   "spatial_status": "within_threshold",
+   "date_difference_days": 0,
+   "temporal_matching_possible": false,
+   "time_difference_minutes": null,
+   "within_temporal_threshold": null,
+   "temporal_note": "No valid acquisition timestamp for MODIS; temporal matching not possible (no time was inferred).",
+   "classification": "insufficient_timestamp_information",
+   "note": "Potential relationship only. Not a confirmed observation of the same fire."
+  }
+ ],
+ "match_details_truncated": true,
+ "unmatched": {
+  "modis_observation_ids": [],
+  "viirs_observation_ids": [
+   "VIIRS:v1:2"
+  ],
+  "truncated": false
+ },
+ "interpretation": {
+  "observation": "One distinct FIRMS source record (pixels with the same line_number in one daily image are grouped).",
+  "candidate_pair": "A MODIS-VIIRS pair that is close in space (and date); a POTENTIAL relationship only.",
+  "unique_fire_events": null,
+  "unique_fire_events_note": "Not determined. This system does not identify confirmed or unique fire events, and has not been scientifically validated for that purpose."
+ },
+ "data_provenance": {
+  "retrieved_at_utc": "2024-03-05T10:00:00Z",
+  "served_from_cache": {
+   "MODIS": false,
+   "VIIRS": false
+  },
+  "sources": {
+   "MODIS": {
+    "dataset": "FIRMS (Earth Engine)",
+    "product": "MOD14/MYD14 via NASA LANCE/FIRMS, rasterized 1 km, NRT",
+    "available_bands": [
+     "T21",
+     "confidence",
+     "line_number"
+    ],
+    "has_acquisition_time": false,
+    "has_frp": false
+   },
+   "VIIRS": {
+    "dataset": "NASA/LANCE/SNPP_VIIRS/C2",
+    "product": "VNP14IMGTDL_NRT 375 m, daily raster, NRT",
+    "has_acquisition_time": true,
+    "has_frp": true
+   }
+  },
+  "retrieval": "ALL unmasked fire pixels in the bbox were retrieved (not a sample); queries over the per-source pixel cap are refused rather than truncated.",
+  "assumptions": [
+   "Observation = FIRMS source record (pixels with equal line_number in one image are grouped).",
+   "Coordinates are pixel centres (MODIS 1 km, VIIRS 375 m); positional uncertainty ~ pixel size.",
+   "Date matching uses the Earth Engine daily image date, assumed to be a UTC bin (not verified).",
+   "MODIS has no acquisition time in this dataset, so MODIS-VIIRS temporal matching is unavailable.",
+   "MODIS confidence (0-100 %) and VIIRS confidence (0/1/2) are different scales and are never converted.",
+   "Candidate pairs are potential relationships only; no fire events are identified or validated."
+  ]
+ },
+ "availability": {
+  "MODIS": {
+   "dataset_id": "FIRMS",
+   "matching_images": 2,
+   "images_with_fire_pixels": 2,
+   "fire_pixels_expected": 6,
+   "fire_pixels_retrieved": 6,
+   "complete": true
+  },
+  "VIIRS": {
+   "dataset_id": "NASA/LANCE/SNPP_VIIRS/C2",
+   "matching_images": 2,
+   "images_with_fire_pixels": 2,
+   "fire_pixels_expected": 3,
+   "fire_pixels_retrieved": 3,
+   "complete": true
+  },
+  "warnings": []
+ },
+ "warnings": [
+  "Temporal matching was not possible for any pair (missing acquisition timestamps); all pairs are spatial/date candidates only."
+ ],
+ "observations": {
+  "modis": [
+   {
+    "observation_id": "MODIS:2024061:713",
+    "source": "MODIS",
+    "platform": "MODIS (Terra and/or Aqua; not distinguishable in Earth Engine FIRMS)",
+    "instrument": "MODIS",
+    "latitude": 23.010503999999997,
+    "longitude": 78.75308600000001,
+    "acquisition_date": "2024-03-01",
+    "acquisition_time_utc": null,
+    "confidence": 68,
+    "confidence_scale": "percent_0_100",
+    "frp_mw": null,
+    "source_image_id": "2024061",
+    "source_image_date": "2024-03-01",
+    "coordinate_method": "mean_of_5_pixel_centers",
+    "pixel_count": 5,
+    "original_properties": {
+     "bands": {
+      "T21": 317.2,
+      "confidence": 68,
+      "line_number": 713
+     },
+     "line_number": 713,
+     "pixel_count": 5,
+     "bands_vary_within_record": false,
+     "pixel_centers_lonlat": [
+      [
+       78.74737,
+       23.0141
+      ],
+      [
+       78.75714,
+       23.0141
+      ],
+      [
+       78.76691,
+       23.0141
+      ],
+      [
+       78.74212,
+       23.00511
+      ],
+      [
+       78.75189,
+       23.00511
+      ]
+     ]
+    }
+   }
+  ],
+  "viirs": [
+   {
+    "observation_id": "VIIRS:v1:1",
+    "source": "VIIRS",
+    "platform": "Suomi NPP",
+    "instrument": "VIIRS",
+    "latitude": 23.0141,
+    "longitude": 78.748,
+    "acquisition_date": "2024-03-01",
+    "acquisition_time_utc": "2024-03-01T12:00:00Z",
+    "confidence": 1,
+    "confidence_scale": "categorical_0_low_1_nominal_2_high",
+    "frp_mw": 3.2,
+    "source_image_id": "v1",
+    "source_image_date": "2024-03-01",
+    "coordinate_method": "pixel_center",
+    "pixel_count": 1,
+    "original_properties": {
+     "bands": {
+      "Bright_ti4": 340.0,
+      "Bright_ti5": 300.0,
+      "confidence": 1,
+      "frp": 3.2,
+      "acq_epoch": 1709294400,
+      "acq_time": 43200,
+      "DayNight": 1,
+      "line_number": 1
+     },
+     "line_number": 1,
+     "pixel_count": 1,
+     "bands_vary_within_record": false,
+     "pixel_centers_lonlat": [
+      [
+       78.748,
+       23.0141
+      ]
+     ]
+    }
+   }
+  ],
+  "truncated": true
+ }
+}

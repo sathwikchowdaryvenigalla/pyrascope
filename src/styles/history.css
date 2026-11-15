@@ -1,0 +1,51 @@
+/* Historical Intelligence lives inside the main menu card (additive; existing calendar colours and rules are untouched). */
+.mode-tabs { display: flex; gap: 4px; }
+.mode-tabs button { flex: 1; }
+.search-card.hist-mode { width: min(94vw, 580px); }
+.hist { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--hair); padding-top: 12px; }
+.hist:empty { display: none; }
+.hist h3 { font-size: 13px; margin: 6px 0 0; padding-top: 8px; border-top: 1px solid var(--hair); letter-spacing: -0.01em; }
+.hist h4 { font-size: 13px; margin: 10px 0 4px; }
+.hist-sub { font-size: 12px; }
+.hist-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.hist-row .seg { flex: 1; min-width: 150px; }
+.hchart { width: 100%; height: auto; display: block; background: var(--glass-soft); border: 1px solid var(--hair); border-radius: 12px; }
+.hchart g:focus-visible { outline: 2px solid var(--crimson); }
+.hist-cov summary { cursor: pointer; font-weight: 600; font-size: 12px; margin-bottom: 6px; }
+.hist-cov table, .hist .table-wrap table { font-size: 11.5px; }
+.check { display: flex; gap: 8px; align-items: center; font-size: 12px; }
+.seasons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-size: 11.5px; }
+.seasons span { border: 1px solid var(--hair); border-radius: 10px; padding: 6px 8px; background: var(--glass-soft); }
+.seasons b { display: block; font-size: 11px; color: var(--grey); }
+.report { border: 1px solid var(--hair); border-radius: 14px; padding: 12px; background: var(--glass-soft); font-size: 12.5px; line-height: 1.45; }
+.report p { margin: 0 0 6px; }
+.hist-compare { display: flex; flex-direction: column; gap: 8px; }
+/* hotspot legend swatches (match the globe tiers) */
+.hs { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+.hs-dot { background: #FF5364; } .hs-low { background: #FFD23F; } .hs-mid { background: #FF8A3D; } .hs-high { background: #FF1F4B; }
+
+/* history mode: the menu slides in from the right and stays docked there so the globe and its hotspots stay visible */
+@keyframes slideInRight { from { transform: translateX(112%); opacity: 0; } 60% { opacity: 1; } to { transform: translateX(0); opacity: 1; } }
+.card-wrap.docked { position: fixed; right: 12px; left: auto; top: calc(var(--hdr) + 12px); bottom: 48px; align-items: flex-start; }
+.card-wrap.docked:not(.away) { animation: slideInRight 0.6s var(--ease) both; }
+.card-wrap.docked.away { transform: translateX(112%); opacity: 0; visibility: hidden; transition: transform 0.45s var(--ease), opacity 0.3s ease, visibility 0s 0.45s; }
+.card-wrap.docked .search-card { max-height: 100%; }
+.hist-show { position: fixed; right: 12px; left: auto; top: calc(var(--hdr) + 12px); z-index: 3; border-radius: 999px; padding: 9px 16px; font-weight: 600; animation: slideInRight 0.5s var(--ease) both; }
+@media (max-width: 1000px) { .card-wrap.docked { position: static; } .card-wrap.docked:not(.away) { animation: rise 0.5s var(--ease) both; } }
+@media (prefers-reduced-motion: reduce) { .card-wrap.docked:not(.away), .hist-show { animation: none; } }
+
+/* loading ring with percentage */
+.prog { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--hair); border-radius: 14px; background: var(--glass-soft); }
+.prog svg { flex: none; transform: rotate(-90deg); }
+.prog-track { fill: none; stroke: var(--hair); stroke-width: 5; }
+.prog-bar { fill: none; stroke: var(--crimson, #D62839); stroke-width: 5; stroke-linecap: round; transition: stroke-dashoffset 0.6s var(--ease); }
+.prog-pct { font-size: 18px; min-width: 3.2ch; font-variant-numeric: tabular-nums; }
+.prog-stage { font-size: 12px; line-height: 1.3; }
+.tier-bar { display: flex; flex-direction: column; gap: 6px; }
+.tier-bar .seg { display: flex; gap: 4px; flex-wrap: wrap; }
+.tier-bar .seg button { flex: 1; min-width: 70px; }
+.tier-bar .tier-btns { flex-direction: column; }
+.tier-bar .tier-btns button { text-align: left; }
+.tier-bar small { opacity: 0.7; }
+
+.mk-modis.unmatched { background: #FF5364; } .mk-viirs.unmatched { background: #D62839; }

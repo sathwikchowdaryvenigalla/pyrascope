@@ -1,0 +1,1 @@
+{"status": "no_data", "source_family": "MODIS", "start_date": "2023-01-01", "end_date": "2023-12-31", "cell_size_deg": 0.05, "cell_count": 0, "cells": [], "truncated": false, "note": "Each cell sums 1 km fire records (cell-days) inside it. Counts depend on cell size and sensor; not unique fires."}

@@ -1,0 +1,26 @@
+/* Environmental Impact Assessment: glass-style cards inside the observation details panel. */
+.ei { margin-top: 12px; padding: 12px; border-radius: 16px; background: var(--glass-soft); border: 1px solid var(--hair); }
+.ei h3 { font-size: 14px; margin: 0 0 8px; letter-spacing: -0.01em; }
+.ei-tier { display: flex; align-items: center; gap: 8px; margin: 12px 0 6px; font-size: 11px; flex-wrap: wrap; }
+.ei-badge { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--hair); white-space: nowrap; }
+.ei-obs { background: rgba(32, 33, 36, 0.08); }
+.ei-est { background: rgba(224, 164, 0, 0.16); border-color: rgba(224, 164, 0, 0.4); }
+.ei-conf { background: rgba(46, 157, 91, 0.16); border-color: rgba(46, 157, 91, 0.45); }
+.ei-ins, .ei-na { background: rgba(154, 160, 166, 0.16); color: var(--grey); }
+.ei-facts { display: grid; grid-template-columns: 1fr; gap: 4px; margin: 6px 0 0; font-size: 12px; }
+.ei-facts div { display: flex; flex-direction: column; }
+.ei-facts dt { font-size: 10.5px; color: var(--grey); }
+.ei-facts dd { margin: 0; font-weight: 600; }
+.ei-obs-grid { grid-template-columns: 1fr 1fr; gap: 6px 12px; }
+.ei-assess { display: flex; flex-direction: column; gap: 2px; margin-top: 10px; padding: 8px 10px; border-radius: 12px; background: rgba(255, 255, 255, 0.55); border: 1px solid var(--hair); font-size: 12px; }
+.ei-item { margin-top: 8px; padding: 9px 10px; border-radius: 12px; background: rgba(255, 255, 255, 0.55); border: 1px solid var(--hair); }
+.ei-item-head { display: flex; align-items: center; gap: 8px; font-size: 12.5px; }
+.ei-item-head .ei-badge { margin-left: auto; }
+.ei-ico { font-size: 14px; }
+.ei-line { margin: 6px 0 0; font-size: 12px; }
+.ei-reason { margin: 6px 0 0; font-size: 11.5px; color: var(--deep); }
+.ei-src { margin: 6px 0 0; font-size: 10.5px; color: var(--grey); }
+.ei-lim { margin-top: 4px; font-size: 10.5px; color: var(--grey); }
+.ei-lim summary { cursor: pointer; }
+.ei-lim ul { margin: 4px 0 0; padding-left: 16px; }
+.ei-global { margin-top: 10px; }

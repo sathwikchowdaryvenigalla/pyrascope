@@ -1,0 +1,23 @@
+# Node / frontend
+node_modules/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets - never commit
+.env
+.env.*
+!.env.example
+*service-account*.json
+*credentials*.json
+*private*key*.json
+*.pem
+*.p12
+.config/earthengine/
+
+# test build output
+tests/frontend/.smoke.build.mjs

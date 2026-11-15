@@ -1,0 +1,118 @@
+{
+ "status": "no_data",
+ "connected": true,
+ "message": "No MODIS or VIIRS fire observations were found in this query.",
+ "query": {
+  "start_date": "2024-03-01",
+  "end_date": "2024-03-02",
+  "end_date_inclusive": true,
+  "bbox": {
+   "min_lon": 76,
+   "min_lat": 21,
+   "max_lon": 80,
+   "max_lat": 25
+  }
+ },
+ "applied_thresholds": {
+  "spatial_km": 1.0,
+  "temporal_minutes": 30.0,
+  "date_tolerance_days": 0
+ },
+ "counts": {
+  "observations": {
+   "modis": 0,
+   "viirs": 0,
+   "modis_pixels_retrieved": 0,
+   "viirs_pixels_retrieved": 0
+  },
+  "candidate_pairs": {
+   "total": 0,
+   "potential_spatial_and_temporal_matches": 0,
+   "spatial_only_candidates": 0,
+   "insufficient_timestamp_information": 0,
+   "modis_observations_with_a_candidate": 0,
+   "viirs_observations_with_a_candidate": 0
+  },
+  "unmatched": {
+   "modis_observations": 0,
+   "viirs_observations": 0,
+   "modis_without_coordinates": 0,
+   "viirs_without_coordinates": 0
+  },
+  "unique_fire_events": null
+ },
+ "temporal_matching_available": false,
+ "match_details": [],
+ "match_details_truncated": false,
+ "unmatched": {
+  "modis_observation_ids": [],
+  "viirs_observation_ids": [],
+  "truncated": false
+ },
+ "interpretation": {
+  "observation": "One distinct FIRMS source record (pixels with the same line_number in one daily image are grouped).",
+  "candidate_pair": "A MODIS-VIIRS pair that is close in space (and date); a POTENTIAL relationship only.",
+  "unique_fire_events": null,
+  "unique_fire_events_note": "Not determined. This system does not identify confirmed or unique fire events, and has not been scientifically validated for that purpose."
+ },
+ "data_provenance": {
+  "retrieved_at_utc": "2024-03-05T10:00:00Z",
+  "served_from_cache": {
+   "MODIS": false,
+   "VIIRS": false
+  },
+  "sources": {
+   "MODIS": {
+    "dataset": "FIRMS (Earth Engine)",
+    "product": "MOD14/MYD14 via NASA LANCE/FIRMS, rasterized 1 km, NRT",
+    "available_bands": [
+     "T21",
+     "confidence",
+     "line_number"
+    ],
+    "has_acquisition_time": false,
+    "has_frp": false
+   },
+   "VIIRS": {
+    "dataset": "NASA/LANCE/SNPP_VIIRS/C2",
+    "product": "VNP14IMGTDL_NRT 375 m, daily raster, NRT",
+    "has_acquisition_time": true,
+    "has_frp": true
+   }
+  },
+  "retrieval": "ALL unmasked fire pixels in the bbox were retrieved (not a sample); queries over the per-source pixel cap are refused rather than truncated.",
+  "assumptions": [
+   "Observation = FIRMS source record (pixels with equal line_number in one image are grouped).",
+   "Coordinates are pixel centres (MODIS 1 km, VIIRS 375 m); positional uncertainty ~ pixel size.",
+   "Date matching uses the Earth Engine daily image date, assumed to be a UTC bin (not verified).",
+   "MODIS has no acquisition time in this dataset, so MODIS-VIIRS temporal matching is unavailable.",
+   "MODIS confidence (0-100 %) and VIIRS confidence (0/1/2) are different scales and are never converted.",
+   "Candidate pairs are potential relationships only; no fire events are identified or validated."
+  ]
+ },
+ "availability": {
+  "MODIS": {
+   "dataset_id": "FIRMS",
+   "matching_images": 2,
+   "images_with_fire_pixels": 2,
+   "fire_pixels_expected": 0,
+   "fire_pixels_retrieved": 0,
+   "complete": true
+  },
+  "VIIRS": {
+   "dataset_id": "NASA/LANCE/SNPP_VIIRS/C2",
+   "matching_images": 2,
+   "images_with_fire_pixels": 2,
+   "fire_pixels_expected": 0,
+   "fire_pixels_retrieved": 0,
+   "complete": true
+  },
+  "warnings": []
+ },
+ "warnings": [],
+ "observations": {
+  "modis": [],
+  "viirs": [],
+  "truncated": false
+ }
+}
